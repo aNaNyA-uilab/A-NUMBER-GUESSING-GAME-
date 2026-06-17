@@ -1,0 +1,38 @@
+print("HELLO THERE! I AM A NUMBER GUESSING GAME , I WILL THINK OF A NUMBER , AND YOU HAVE TO GUESS IT")
+
+name=input("KINDLY ENTER YOUR NAME TO PROCEED:")
+
+print("ALRIGHT! GOOD LUCK", name)
+
+w=int(input("ENTER THE NUMBER YOU WANT TO START THE RANGE FROM:"))
+
+q=int(input("ENTER THE NUMBER YOU WANT THE RANGE TO STOP AT "))
+
+import random
+
+number=random.randint(w,q)
+
+print("I AM THINKING OF A NUMBER BETWEEN " , w ,"and", q,"TAKE YOUR GUESSES")
+
+t=input("CHOOSE A LEVEL FOR YOUR GAME{easy ,medium,hard}: ")
+
+if(t=="easy"):
+    tries=10
+elif(t=="medium"):
+    tries=7
+else:
+    tries=3
+print(name,"YOU HAVE", tries,"tries")
+
+for a in range(tries):
+    guess=int(input("ENTER YOUR GUESS:"))
+    diff=abs(number-guess)
+    if(diff==0):
+        print("CONGRATULATIONS!", name, "YOU'RE PRETTY SMART I'D HAVE TO ADMIT")
+break
+    elif(diff<=5):
+        print("SORRYYYYYY!",name,"BUT, YOU ARE VERY CLOSE")
+    elif(guess>number):
+        print("WOAHHHHHH!",name,"YOU ARE TOOOOOO HIGH")
+    else:
+        print("OH NO",name,"TOO LOW)
